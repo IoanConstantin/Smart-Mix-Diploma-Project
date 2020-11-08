@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Maps</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <style>
+    #map{
+      height:470px;
+      width:100%;
+    }
+
+    .raleway {
+        font-family: 'Raleway', sans-serif;
+    }
+  </style>
+</head>
+<body>
+<p style="font-family:'Courier New'; font-size: 150%;"><b>Selectează un nou traseu:</b></p>
+<button onclick="location.href='http://localhost:8080/google-maps-cel-mai-ieftin'" type="button" style="position: absolute;
+top: 65px; left: 8px; background-color: #283747; border: 3px solid black; font-family:'Courier New';
+color: #FFFFFF;">Cel mai scurt drum </button>
+<button onclick="location.href='http://localhost:8080/register'" type="button" style="position: absolute;
+top: 65px; left: 203px; background-color: #283747; border: 3px solid black; font-family:'Courier New';
+color: #FFFFFF;">Cel mai rapid drum </button>
+<div style="position: absolute; top: 104px; left: 8px; font-family:'Courier New'; font-size: 130%;">
+    <b>Cel mai ieftin traseu: </b>
+    <a href="https://www.google.ro/maps/dir/Strada+Tuberozelor+8,+Bucure%C8%99ti/Lidl,+Strada+Sergent+%C8%98tefan+Cri%C8%99an+31,+Bucure%C8%99ti+060311/@44.4543332,26.0470125,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x40b20204de0ef825:0xed0fb6f69c80a0c!2m2!1d26.0828951!2d44.460953!1m5!1m1!1s0x40b2019221cb9f75:0xce65660a6a904f32!2m2!1d26.0482361!2d44.4511952"><b>Locația ta -> Lidl Crângași</b></a>
+    <b> (Mozzarella - 12,8 Lei) </b>
+    <a href="https://www.google.ro/maps/dir/Carrefour+Market,+Str.+Barbu+V%C4%83c%C4%83rescu+154-158,+Bucure%C8%99ti+020284/Mega+Image,+Calea+Victoriei,+Bucure%C8%99ti/@44.4614116,26.0764309,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x40b1f8a3b4d5570b:0xd5095f3ea75218ee!2m2!1d26.1101679!2d44.4645679!1m5!1m1!1s0x40b201ffc7c05df5:0xe30589afe76d9676!2m2!1d26.0854831!2d44.4514301"><b>-> Mega Image Grivița</b></a>
+    <b> (Pesmet - 2,9 Lei, Făină - 1,9 Lei) </b>
+    <a href="https://www.google.ro/maps/dir/Mega+Image,+Calea+Victoriei+155,+Bucure%C8%99ti/Mega+Image,+Calea+Grivi%C8%9Bei,+Bucure%C8%99ti/@44.4546203,26.0629407,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x40b201ffc7c05df5:0xe30589afe76d9676!2m2!1d26.0854831!2d44.4514301!1m5!1m1!1s0x40b2022721609def:0x2e207ee7b59319ff!2m2!1d26.0572975!2d44.4622927"><b>-> Mega Image Agronomie</b></a>
+    <b> (Ulei 3,5 Lei, 2 Ouă - 0,8 Lei) </b>
+    <a href="https://www.google.ro/maps/dir/Mega+Image,+Calea+Victoriei+155,+Bucure%C8%99ti/Mega+Image,+Calea+Grivi%C8%9Bei,+Bucure%C8%99ti/@44.4546203,26.0629407,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x40b201ffc7c05df5:0xe30589afe76d9676!2m2!1d26.0854831!2d44.4514301!1m5!1m1!1s0x40b2022721609def:0x2e207ee7b59319ff!2m2!1d26.0572975!2d44.4622927"><b>-> Carrefour Floreasca</b></a>
+    <b>(Parmezan - 9,6 Lei)</b>
+    </a>
+</div>
+<div id="map" style="position: absolute; top: 178px; right: 3px;"></div>
+<script>
+    function initMap(){
+      var options = {
+        zoom:14,
+        center:{lat:44.463415,lng:26.084534}
+      }
+
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      /*
+      google.maps.event.addListener(map, 'click', function(event){
+        addMarker({coords:event.latLng});
+      }); */
+
+      var marker = new google.maps.Marker({
+        position:{lat:44.4514339,lng:26.0832944},
+        map:map,
+        icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<h2 class="raleway">Mega Image Victoriei</h2>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+
+      var markers = [
+        {
+          coords:{lat:44.4565723,lng: 26.1301527},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h2 class="raleway">Kaufland Colentina</h2>'
+        },
+        {
+          coords:{lat:44.4645717,lng: 26.1079792},
+          iconImage:'http://localhost/4.png',
+          content:'<h2 class="raleway">Carrefour Floreasca</h2>'
+        },
+        {
+          coords:{lat:44.460953,lng:26.0807064},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/library_maps.png',
+          content:'<h2 class="raleway">Locația ta</h2>'
+        },
+        {
+          coords:{lat:44.4515736,lng:26.1180803},
+          iconImage:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+          content:'<h2 class="raleway">Mega Image Ștefan Cel Mare</h2>'
+        },
+        {
+          coords:{lat:44.4523962,lng:26.0461592},
+          iconImage:'http://localhost/1.png',
+          content:'<h2 class="raleway">Lidl Crângași</h2>'
+        },
+        {
+          coords:{lat:44.4723309,lng:26.061049},
+          iconImage:'http://localhost/3.png',
+          content:'<h2 class="raleway">Mega Image Agronomie</h2>'
+        },
+        {
+          coords:{lat:44.4617666,lng:26.056471},
+          iconImage:'http://localhost/2.png',
+          content:'<h2 class="raleway">Mega Image Grivița</h2>'
+        }
+      ];
+
+      for(var i = 0;i < markers.length;i++){
+        addMarker(markers[i]);
+      }
+
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+
+        if(props.iconImage){
+          // Set icon image
+          marker.setIcon(props.iconImage);
+        }
+
+        if(props.content){
+          var infoWindow = new google.maps.InfoWindow({
+            content:props.content
+          });
+
+          marker.addListener('click', function(){
+            infoWindow.open(map, marker);
+          });
+        }
+      }
+    }
+  </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKCl-ahYRUb4bsTnw49pAxLLGp1W3xNh8&callback=initMap">
+</script>
+</body>
+</html>

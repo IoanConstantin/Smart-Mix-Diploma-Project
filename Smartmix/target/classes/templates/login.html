@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<script th:if="${perecheanumeparolanuexista}">
+    function loginVerificare() {
+        alert("Numele de utilizator sau parola nu este in baza de date");
+    }
+</script>
+<body>
+    <img src="http://localhost/apreciate_4.png" alt="apreciate" style="position: absolute; top: 347px; left: 10px;" height="303" width="442" align="right">
+    <img src="http://localhost/mancare_dietetica.png" alt="dietetica" style="vertical-align:top" align="right" height="300" width="430">
+    <img src="http://localhost/logo_3.png" alt="logo" style="position: absolute; left: 475px;" height="300" width="430">
+    <img src="http://localhost/introdu_ingrediente.png" alt="ingrediente" style="position: absolute; top: 347px; right: 8px;" height="303" width="430" align="left">
+    <img src="http://localhost/restaurante_zona.png" alt="restaurante" style="position: absolute; top: 347px; left: 475px;" height="303"  width="430" align="right">
+    <!-- <h1 style="font-family:'Courier New'; font-size: 130%; color: #FACC2E;">Bine ai venit! </h1> -->
+    <h1 style="font-family:'Courier New'; font-size: 130%; color: #283747;">Nu ai deocamdata cont? </h1>
+    <button onclick="location.href='http://localhost:8080/register'" type="button" style="position: absolute; top: 14px; left: 294px;
+    background-color: #283747; border: 3px solid black; font-family:'Courier New'; color: #FFFFFF;">Inregistrare</button>
+    <!-- <p th:if="${perecheanumeparolanuexista}" class="error" style="color: #FF8000; font-family:'Courier New'; font-size:100%"><b>Se Afla In Baza De Date!</b></p>
+    <h1 style="font-family:'Courier New'; font-size: 130%; color: #3333FF;">Introdu datele de logare mai jos: </h1> -->
+    <form th:action="@{/login}" th:object="${loginForm}" method="post">
+        <label for="username" style="background-color: #e7e7e7; color: #3333FF; font-family:'Courier New';">Numele Utilizatorului:</label>
+        <b>&nbsp;</b>
+        <input type="text" id="username" name="username" autofocus="autofocus" />
+        <br />
+        <br />
+        <label for="password" style="background-color: #e7e7e7; color: #3333FF; font-family:'Courier New';">Parola:</label>
+        <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+        <input type="password" id="password" name="password" />
+        <p></p><p></p>
+        <br />
+        <input type="submit" value="Logare" style="background-color: #3333FF; border: 3px solid black; font-family:'Courier New'; color: #FFFFFF;"/>
+        <!-- onclick="loginVerificare()" -->
+    </form>
+
+</body>
+</html>

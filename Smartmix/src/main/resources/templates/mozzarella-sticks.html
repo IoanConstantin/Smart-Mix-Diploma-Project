@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Mozzarella Sticks</title>
+    <!-- <link rel="stylesheet" type="text/css" href="./style.css"> -->
+    <meta charset="UTF-8">
+    <!-- <meta name="description" content="Istoria Tenisului Romanesc"> -->
+    <meta name="keywords" content="tenis,sport">
+    <meta name="author" content="Ioan">
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+          rel="stylesheet"  type='text/css'>
+</head>
+<style>
+    body {
+	margin: auto;
+	font-family: 'Baloo Thambi 2', cursive;
+}
+
+#container {
+	background-color: #ADD8E6;
+	width: 800px;
+}
+
+header {
+	background-color: #009933;
+	font-size: 50px;
+	text-align: center;
+	margin-bottom: 20px;
+	font-family: 'Raleway', sans-serif;
+}
+
+#content {
+	display: grid;
+	width: 800px;
+	grid-template-columns: 600px 180px;
+	grid-gap: 10px;
+	margin-bottom: 20px;
+
+}
+
+.subtitle {
+	text-align: center;
+	margin-bottom: 15px;
+	font-family: 'Gotu', sans-serif;
+}
+
+.subtitle-2 {
+	text-align: left;
+	margin-bottom: 15px;
+	font-size: 23px;
+	font-family: 'Gotu', sans-serif;
+}
+
+.title {
+	text-align: center;
+	margin: 10px;
+	font-size: 28px;
+	font-family: 'Raleway', sans-serif;
+}
+
+#main {
+	background-color: #4682B4;
+	padding: 10px;
+	margin-left: 5px;
+
+}
+
+#tenisVideo {
+	width: 500px;
+	height: 280px;
+	display: block;
+	margin: auto;
+}
+
+#nav {
+	background-color: #9370DB;
+}
+
+
+#form {
+	background-color: #708090;
+	padding: 15px;
+	margin-bottom: 15px;
+}
+
+#footer {
+	background-color: black;
+	color: white;
+	padding: 15px;
+}
+
+#main-info {
+	margin: 10px;
+}
+
+td {
+	max-width: 50px;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+tr:nth-child(even) {
+	background: #C0C0C0;
+}
+
+tr:nth-child(odd) {
+	background: #2E8B57;
+}
+
+.favourites {
+        background: url("http://localhost/favourites.png") no-repeat;
+}
+.favourites:visited {
+        background: url("http://localhost/favourites-2.png") no-repeat;
+}
+</style>
+<script>
+    function adaugaLaFavorite() {
+        alert("Ai o nouă compatibilitate culinară în secțiunea Prieteni!");
+        window.open('http://localhost:8080/', '_blank');
+    }
+</script>
+<body>
+<div id="container">
+    <!-- window.location = 'http://localhost:8080/'; -->
+    <!-- <header>Istoria Tenisului Romanesc</header> -->
+    <div id="content">
+        <article id="main">
+            <h1 class="title"> Mozzarella Sticks </h1>
+            <div class="subtitle">
+                <div> publicat de admin | 06 Mai 2020 </div>
+                <div> keywords: mozzarella, simplu, ușor, preparat </div>
+            </div>
+            <!-- <img src="http://localhost/fried-Mozzarella-Cheese-Sticks-400x300.jpg" width="300" height="210"> <!-- style="position: absolute; left:150px"> -->
+
+            <!-- <div style="position: absolute; top: 300px;"> -->
+                <section>
+                    <h3 id="mod-de-preparare"> Mod de preparare </h3>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Se amestecă într-o farfurie întinsă pesmetul și parmezanul,
+                        în altă farfurie se pune făină și într -un bol se bat ouăle . Tăiem mozzarella bastonașe
+                        groase de cca 1 deget, le umezim puțîn  și le dăm prin făină, apoi prin ou, apoi prin
+                        amestecul de pesmet și parmezan. Dacă vreți puteți repeta operațiunea, să le dați încă o
+                        dată prin ou și apoi pesmet, pentru a avea o crustă mai groasă. </p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le punem pe o tavă pe hârtie de copt și le dăm la congelator
+                        pentru circa 2-3 ore (le putem congela 2-3 zile). După cele 2-3 ore, încingem bine uleiul
+                        și punem bastonașele la prăjit, la foc iute, câte 1 min pe fiecare parte. Uleiul neapărat
+                        trebuie să fie bine încins pentru ca mozzarella să nu iasă în ulei.</p>
+                </section>
+                <section>
+                    <h3 id="ingrediente"> Ingrediente </h3>
+                    <form action="/action_page.php">
+                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                        <label for="vehicle1">400 g mozzarella (din cea tare la calup, nu cea în zer)</label><br>
+                        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                        <label for="vehicle2">3-4 lg de făină</label><br>
+                        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                        <label for="vehicle3">circa 200 g pesmet</label><br>
+                        <input type="checkbox" id="vehicle4" name="vehicle4" value="Value1">
+                        <label for="vehicle4">circa 80 g parmezan ras</label><br>
+                        <input type="checkbox" id="vehicle5" name="vehicle5" value="Value2">
+                        <label for="vehicle5">2 ouă</label><br>
+                        <input type="checkbox" id="vehicle6" name="vehicle6" value="Value3">
+                        <label for="vehicle6">ulei pentru prăjit</label><br>
+                    </form>
+                    <!-- <ul>
+                        <li>400 g mozzarella (din cea tare la calup, nu cea în zer)</li>
+                        <li>3-4 lg de făină</li>
+                        <li>circa 200 g pesmet</li>
+                        <li>circa 80 g parmezan ras</li>
+                        <li>2 ouă</li>
+                        <li>ulei pentru prăjit</li>
+                        </li>
+                    </ul> -->
+                </section>
+            <button onclick="window.open('http://localhost:8080/google-maps', '_blank')" type="button" class="raleway"
+                    style="background-color: #3333FF; border: 3px solid black; font-family:'Courier New';
+                    color: #FFFFFF;">Cumpără ingrediente</button>
+        </article>
+
+        <nav id="nav">
+            <b><i> Adaugă la favorite:</i></b>
+            <img src="http://localhost/favourites.png" onclick="adaugaLaFavorite()">
+            <b><i> Conținut articol:</i></b>
+                <ul>
+                    <li>
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                        <a href="#mod-de-preparare">Mod de preparare</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-google" aria-hidden="true"></i>
+                        <a href="#ingrediente">Ingrediente</a>
+                    </li>
+                </ul>
+
+            <table>
+                <tr>
+                    <th>Aceeasi categorie
+                    </th>
+                    <th>Alte categorii
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://artout.ro/reviste/blog/evolutia-tenisului-romanesc-2/">Sarmale</a>
+                    </td>
+                    <td>
+                        <a href="https://treizecizero.ro/juniori/episodul2.htm">Dietetice</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://www.atptennis.ro/istoria-tenisului">Chiftele</a>
+                    <td>
+                        <a href="https://sportescu.ro/filip-jianu-pariu-tenis-romanesc/">Fără sare</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </div>
+    <form id="form">
+        <div>
+            <label>Ofera un calificativ articolului: </label>
+            <select id="grades">
+                <option value="foarte bine">Foarte bine</option>
+                <option value="bine">Bine</option>
+                <option value="neutru">Neutru</option>
+                <option value="satisfacator">Satisfacator</option>
+                <option value="nesatisfacator">Nesatisfacator</option>
+            </select>
+        </div>
+        <br>
+
+        <textarea rows="4" cols="50"> Comenteaza
+			</textarea>
+        <br>
+
+        <div>
+            <input type="checkbox" required> I accept the <u>Terms and Conditions</u>
+        </div>
+        <div>
+            <input type="checkbox"> Trimite-mi notificari pe mail
+            <br>
+            <br>
+            <label>Introduceti email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <br>
+
+        <div>
+            <input type="submit" value="Trimite">
+        </div>
+    </form>
+    <footer id="footer">
+        <ul id="main-info">
+            <li>Copyright @ May 2020 by SmartMix</li>
+            <li>
+                Contacte:
+                <ul>
+                    <li> Email: smartmix@gmail.com </li>
+                    <li> Tel: 0712345678 </li>
+                </ul>
+            </li>
+        </ul>
+    </footer>
+</div>
+</body>
+</html>
